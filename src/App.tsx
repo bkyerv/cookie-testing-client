@@ -1,4 +1,6 @@
 function App() {
+  console.log("mode", import.meta.env.MODE);
+  console.log("env", import.meta.env);
   async function fetchServer() {
     const url =
       import.meta.env.MODE === "production"
