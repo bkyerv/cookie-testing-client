@@ -1,6 +1,10 @@
 function App() {
   async function fetchServer() {
-    const res = await fetch("http://localhost:8787", {
+    const url =
+      import.meta.env.MODE === "production"
+        ? import.meta.env.VITE_URL_PROD
+        : import.meta.env.VITE_URL_DEV;
+    const res = await fetch(url, {
       credentials: "include",
     });
     const data = await res.text();
